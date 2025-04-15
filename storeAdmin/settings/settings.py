@@ -11,12 +11,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import os  # pode ser no inicio do codigo
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")  # abaixo do BASE_DIR =
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 Path(__file__).resolve().parent.parent
 
 
@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-7#cj9p6e8w-wnsmns3y@_4(&a=n#uv%_^_f35oxu5@$=wx(3$0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = []
 
 
 # Application definition

@@ -6,9 +6,9 @@ import sys
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings.development")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "storeAdmin.settings.development")
     try:
-        from django.core.management import execute_from_command_line
+        from django.core.management import execute_from_command_line  # type: ignore
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
