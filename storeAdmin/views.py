@@ -17,7 +17,7 @@ def index(request):
             else:
                 out += "<p>" + "&nbsp;" * 2 * (maxi - i) + text + "</p><br>"
 
-    css = "<style>* {  margin: 0; padding: 0; }p { margin: 0; }</style>"
+    css = "<style>* {  margin: 0; padding: 0; }p { margin: -6px 0; }</style>"
 
     return HttpResponse(css + out)
 

@@ -27,7 +27,7 @@ Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-7#cj9p6e8w-wnsmns3y@_4(&a=n#uv%_^_f35oxu5@$=wx(3$0"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS: list[str] = []
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "loja",
 ]
 
 MIDDLEWARE = [
