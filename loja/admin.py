@@ -1,3 +1,8 @@
 from django.contrib import admin  # type: ignore
 
-# Register your models here.
+
+from .models import Fabricante, Categoria, Produto
+
+admin.site.register(Fabricante)
+admin.site.register(Categoria)
+admin.site.register(Produto)

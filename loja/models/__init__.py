@@ -5,3 +5,4 @@ from django.dispatch import receiver  # type: ignore
 
 from .fabricante import Fabricante
 from .categoria import Categoria
+from .produto import Produto
