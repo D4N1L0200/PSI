@@ -17,17 +17,22 @@ Including another URLconf
 
 from django.contrib import admin  # type: ignore
 from django.urls import path  # type: ignore
-from . import views
 
 from django.conf.urls.static import static  # type: ignore
 from django.conf import settings  # type: ignore
 
-urlpatterns = [
+from django.conf.urls import include  # type: ignore
+
+from django.urls.resolvers import URLResolver, URLPattern  # type: ignore
+
+
+urlpatterns: list[URLResolver | URLPattern] = [
     path("admin/", admin.site.urls),
-    path("", views.index, name="index"),
-    path("emoji/", views.emoji, name="emoji"),
-    path("about/", views.about, name="about"),
+    path("", include("loja.urls.home_urls")),
+    path("extra/", include("loja.urls.extra_urls")),
+    path("produto/", include("loja.urls.produto_urls")),
 ]
+
 urlpatterns.extend(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
 urlpatterns.extend(
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),

@@ -1,8 +1,15 @@
-from django.http import HttpResponse  # type: ignore
 import random
+from django.http import HttpResponse  # type: ignore
 
 
-def index(request):
+def emoji_view(request):
+    emojis = ["😺", "🚀", "🍕", "🎮", "🌈", "🐉", "📚", "🦄"]
+    return HttpResponse(
+        f"Hello from Django! Here's a random emoji: {random.choice(emojis)}"
+    )
+
+
+def snake_view(request):
     maxi = 20
     maxloops = 20
     text = "Hello, InfoWeb!"
@@ -22,14 +29,7 @@ def index(request):
     return HttpResponse(css + out)
 
 
-def emoji(request):
-    emojis = ["😺", "🚀", "🍕", "🎮", "🌈", "🐉", "📚", "🦄"]
-    return HttpResponse(
-        f"Hello from Django! Here's a random emoji: {random.choice(emojis)}"
-    )
-
-
-def about(request):
+def about_view(request):
     quotes = [
         "The best way to predict the future is to invent it.",
         "In the middle of difficulty lies opportunity.",
