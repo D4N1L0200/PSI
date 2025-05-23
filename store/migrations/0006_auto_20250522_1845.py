@@ -5,14 +5,14 @@ from django.db import migrations  # type: ignore
 
 def transfer_data(apps, schema_editor):
     # Get old models
-    Categoria = apps.get_model("loja", "Categoria")
-    Fabricante = apps.get_model("loja", "Fabricante")
-    Produto = apps.get_model("loja", "Produto")
+    Categoria = apps.get_model("store", "Categoria")
+    Fabricante = apps.get_model("store", "Fabricante")
+    Produto = apps.get_model("store", "Produto")
 
     # Get new models
-    Category = apps.get_model("loja", "Category")
-    Manufacturer = apps.get_model("loja", "Manufacturer")
-    Product = apps.get_model("loja", "Product")
+    Category = apps.get_model("store", "Category")
+    Manufacturer = apps.get_model("store", "Manufacturer")
+    Product = apps.get_model("store", "Product")
 
     # Migrate categories
     cat_map = {}
@@ -54,7 +54,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "loja",
+            "store",
             "0005_category_manufacturer_product",
         ),
     ]

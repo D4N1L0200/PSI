@@ -1,5 +1,5 @@
 from django.urls import path  # type: ignore
-from loja.views.extra_views import emoji_view, snake_view, about_view
+from store.views.extra_views import emoji_view, snake_view, about_view
 
 urlpatterns = [
     path("emoji/", emoji_view),

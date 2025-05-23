@@ -1,4 +1,4 @@
-from loja.models import Product
+from store.models import Product
 from django.utils import timezone  # type: ignore
 from django.http import HttpResponse  # type: ignore
 from django.shortcuts import render  # type: ignore
@@ -69,7 +69,7 @@ def get_product_card_template(product: Product) -> str:
     text += f"""
     <div class="products">
         <div class="product">
-            <img src="{image}" alt="Produto">
+            <img src="{image}" alt="Product">
             <div>
                 <h2>Product: {product.name}</h2>
                 <h3>Price: {price}</h3>
@@ -108,7 +108,7 @@ def products_list_view(request) -> HttpResponse:
     if any(queries.values()):
 
         if name_query := queries["name"]:
-            products = products.filter(Produto__icontains=name_query)
+            products = products.filter(name__icontains=name_query)
 
         if featured_query := queries["featured"]:
             if isinstance(featured_query, str):

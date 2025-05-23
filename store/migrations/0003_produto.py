@@ -7,7 +7,7 @@ import django.db.models.deletion  # type: ignore
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('loja', '0002_fabricante'),
+        ('store', '0002_fabricante'),
     ]
 
     operations = [
@@ -23,8 +23,8 @@ class Migration(migrations.Migration):
                 ('criado_em', models.DateTimeField(auto_now_add=True)),
                 ('alterado_em', models.DateTimeField(auto_now=True)),
                 ('image', models.ImageField(blank=True, null=True, upload_to='')),
-                ('categoria', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='categoria', to='loja.categoria')),
-                ('fabricante', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='fabricante', to='loja.fabricante')),
+                ('categoria', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='categoria', to='store.categoria')),
+                ('fabricante', models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='fabricante', to='store.fabricante')),
             ],
         ),
     ]

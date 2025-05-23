@@ -1,7 +1,7 @@
-from loja.models import *
+from store.models import *
 
 
-class Manufacturer(models.Model):
+class Category(models.Model):
     name = models.CharField(null=False, max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     altered_at = models.DateTimeField(auto_now=True)

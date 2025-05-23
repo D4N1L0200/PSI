@@ -28,9 +28,9 @@ from django.urls.resolvers import URLResolver, URLPattern  # type: ignore
 
 urlpatterns: list[URLResolver | URLPattern] = [
     path("admin/", admin.site.urls),
-    path("", include("loja.urls.home_urls")),
-    path("extra/", include("loja.urls.extra_urls")),
-    path("product/", include("loja.urls.product_urls")),
+    path("", include("store.urls.home_urls")),
+    path("extra/", include("store.urls.extra_urls")),
+    path("product/", include("store.urls.product_urls")),
 ]
 
 urlpatterns.extend(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))

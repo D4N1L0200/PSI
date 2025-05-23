@@ -7,7 +7,7 @@ import django.db.models.deletion  # type: ignore
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("loja", "0004_alter_produto_msgpromocao"),
+        ("store", "0004_alter_produto_msgpromocao"),
     ]
 
     operations = [
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
                         null=True,
                         on_delete=django.db.models.deletion.SET_NULL,
                         related_name="category",
-                        to="loja.category",
+                        to="store.category",
                     ),
                 ),
                 (
@@ -80,7 +80,7 @@ class Migration(migrations.Migration):
                         null=True,
                         on_delete=django.db.models.deletion.SET_NULL,
                         related_name="manufacturer",
-                        to="loja.manufacturer",
+                        to="store.manufacturer",
                     ),
                 ),
             ],

@@ -1,4 +1,4 @@
-from loja.models import *
+from store.models import *
 
 
 class Product(models.Model):
