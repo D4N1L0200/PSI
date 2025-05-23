@@ -30,7 +30,7 @@ urlpatterns: list[URLResolver | URLPattern] = [
     path("admin/", admin.site.urls),
     path("", include("loja.urls.home_urls")),
     path("extra/", include("loja.urls.extra_urls")),
-    path("produto/", include("loja.urls.produto_urls")),
+    path("product/", include("loja.urls.product_urls")),
 ]
 
 urlpatterns.extend(static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))

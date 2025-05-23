@@ -1,26 +1,26 @@
 from django.contrib import admin  # type: ignore
-from .models import Fabricante, Categoria, Produto
+from .models import Manufacturer, Category, Product
 
 
-class FabricanteAdmin(admin.ModelAdmin):
-    date_hierarchy = "criado_em"
+class ManufacturerAdmin(admin.ModelAdmin):
+    date_hierarchy = "created_at"
 
 
-class ProdutoAdmin(admin.ModelAdmin):
-    date_hierarchy = "criado_em"
+class ProductAdmin(admin.ModelAdmin):
+    date_hierarchy = "created_at"
     list_display = (
-        "Produto",
-        "destaque",
-        "promocao",
-        "msgPromocao",
-        "preco",
-        "categoria",
+        "name",
+        "featured",
+        "sale",
+        "sale_msg",
+        "price",
+        "category",
     )
-    search_fields = ("Produto",)
-    exclude = ("msgPromocao",)
-    empty_value_display = "Vazio"
+    search_fields = ("Product",)
+    exclude = ("sale_msg",)
+    empty_value_display = "Empty"
 
 
-admin.site.register(Fabricante, FabricanteAdmin)
-admin.site.register(Categoria)
-admin.site.register(Produto, ProdutoAdmin)
+admin.site.register(Manufacturer, ManufacturerAdmin)
+admin.site.register(Category)
+admin.site.register(Product, ProductAdmin)
