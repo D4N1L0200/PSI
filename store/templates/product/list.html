@@ -28,6 +28,12 @@
 				border-radius: 10px;
 				margin-right: 10px;
 			}
+
+			.products {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
 		</style>
 	</head>
 	<body>
@@ -37,16 +43,22 @@
 			<button type="submit">Search</button>
 		</form>
 
-		<div class="product">
-			<img src="{{ product.image.url }}" alt="Product" />
-			<div>
-				<h2>Product: {{ product.name }}</h2>
-				<h3>Price: R${{ product.price|stringformat:".2f" }}</h3>
-				<h3>Featured: {{ product.featured|yesno:"Yes,No" }}</h3>
-				<h3>Sale: {{ product.sale|yesno:"Yes,No" }}</h3>
-				<h3>Category: {{ product.category }}</h3>
-				<h3>Manufacturer: {{ product.manufacturer }}</h3>
+		<div class="products">
+			{% for product in products %}
+			<div class="product">
+				<img src="{{ product.image.url }}" alt="Product" />
+				<div>
+					<h2>Product: {{ product.name }}</h2>
+					<h3>Price: R${{ product.price|stringformat:".2f" }}</h3>
+					<h3>Featured: {{ product.featured|yesno:"Yes,No" }}</h3>
+					<h3>Sale: {{ product.sale|yesno:"Yes,No" }}</h3>
+					<h3>Category: {{ product.category }}</h3>
+					<h3>Manufacturer: {{ product.manufacturer }}</h3>
+				</div>
 			</div>
+			{% empty %}
+			<p>No products found.</p>
+			{% endfor %}
 		</div>
 
 		<script>
