@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    Product List
+{% endblock title %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/products_list.css' %}">
+{% endblock extra_head %}
+{% block content %}
+    <h2>All Products</h2>
+    <div class="product-list">
+        {% for product in products %}
+            {% include "partials/product_card.html" with product=product %}
+        {% endfor %}
+    </div>
+{% endblock content %}

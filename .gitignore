@@ -1,6 +1,5 @@
 __pycache__/
 .mypy_cache/
-
-# db.sqlite3
-
 venv/
+node_modules/
+# db.sqlite3

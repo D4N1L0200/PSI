@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -63,3 +63,10 @@
 		</script>
 	</body>
 </html>
+{% endcomment %} {% extends "base.html" %} {% block title %}Product List{%
+endblock %} {% block content %}
+<h2>All Products</h2>
+<div class="product-list">
+	{% include "partials/product_card.html" with product=product %}
+</div>
+{% endblock %}

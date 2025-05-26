@@ -27,7 +27,7 @@ def products_list_view(request):
 
     if featured_query := queries["featured"]:
         products = products.filter(featured=featured_query.lower() == "true")
-
+    
     if sale_query := queries["sale"]:
         products = products.filter(sale=sale_query.lower() == "true")
 
@@ -47,11 +47,11 @@ def products_list_view(request):
 
     return render(
         request,
-        "product/list.html",
+        "store/product_list.html",
         {"products": products},
     )
 
 
 def product_view(request, id: int) -> HttpResponse:
     product = Product.objects.get(id=id)
-    return render(request, "product/view.html", {"product": product})
+    return render(request, "store/product_view.html", {"product": product})

@@ -1,0 +1,12 @@
+
+
+<div class="product-card">
+    <img src="{{ product.image.url }}"
+         alt="{{ product.name }}"
+         width="150"
+         height="150" />
+    <h2>{{ product.name }}</h2>
+    <p>Price: R${{ product.price|stringformat:"0.2f" }}</p>
+    <p>Featured: {{ product.featured }}</p>
+    <p>Sale: {{ product.sale }}</p>
+</div>

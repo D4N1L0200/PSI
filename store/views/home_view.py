@@ -3,7 +3,7 @@ from django.http import HttpResponse  # type: ignore
 
 def home_view(request) -> HttpResponse:
     links: list[str] = [
-        "<a href='/product/'>List products</a>",
+        "<a href='/products/'>List products</a>",
         "<a href='/extra/emoji/'>Emoji</a>",
         "<a href='/extra/snake/'>Snake</a>",
         "<a href='/extra/about/'>About</a>",
